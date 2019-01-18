@@ -12,4 +12,9 @@ class Post < ActiveRecord::Base
       end
     end
 
+    def unique_users
+      if self.comments
+        self.comments.collect{|comment| comment.user }.uniq
+      end
+    end
 end
