@@ -6,8 +6,10 @@
 
 Comments:
 <% @post.comments.each do |comment| %>
+<%= comment.user.username %>says
     <%= comment.content %>
-    <% end %>
+  <% end %>
+
 
 Add a comment
   <%= form_for @comment do |f|%>
